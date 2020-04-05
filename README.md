@@ -1,2 +1,9 @@
 # CSC631-HW4
-Homework4 for CSC
+
+## Networking Assignment
+
+### Developed by
+---
+- Emanuel Saunders
+- Andrew Copas
+
