@@ -1,25 +1,21 @@
 package core;
 
 // Java Imports
-import java.io.IOException;
-import java.net.Socket;
-import java.net.ServerSocket;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
-// Other Imports
 import configuration.GameServerConf;
 import metadata.Constants;
 import metadata.GameRequestTable;
 import model.Player;
-import utility.ConfFileParser;
 import utility.Log;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+// Other Imports
 
 /**
  * The GameServer class serves as the main module that runs the server.
@@ -37,8 +33,8 @@ public class GameServer {
     private ServerSocket serverSocket;
     private ExecutorService clientThreadPool;
     // Reference Tables
-    private Map<String, GameClient> activeThreads = new HashMap<String, GameClient>(); // Session ID -> Client
-    private Map<Integer, Player> activePlayers = new HashMap<Integer, Player>(); // Player ID -> Player
+    private Map<String, GameClient> activeThreads = new HashMap<>(); // Session ID -> Client
+    private Map<Integer, Player> activePlayers = new HashMap<>(); // Player ID -> Player
 
     /**
      * Create the GameServer by setting up the request types and creating a
@@ -73,22 +69,19 @@ public class GameServer {
      * Load values from a configuration file.
      */
     public final void configure() {
-        configuration = new GameServerConf();
-        ConfFileParser confFileParser = new ConfFileParser("conf/gameServer.conf");
-        configuration.setConfRecords(confFileParser.parse());
+//        configuration = new GameServerConf();
+//        ConfFileParser confFileParser = new ConfFileParser("conf/gameServer.conf");
+//        configuration.setConfRecords(confFileParser.parse());
     }
 
     /**
      * Initialize the GameServer by loading a few things into memory.
      */
     public final void initialize() {
-        //setupSpeciesTypes();
         //Do what is needed for your game
     }
 
-    /**
-     * Retrieve species from the database and load data into memory.
-     */
+
 
     /**
      * Run the game server by waiting for incoming connection requests.
@@ -98,7 +91,8 @@ public class GameServer {
     private void run() {
         try {
             // Open a connection using the given port to accept incoming connections
-            serverSocket = new ServerSocket(configuration.getPortNumber());
+//            serverSocket = new ServerSocket(configuration.getPortNumber());
+            serverSocket = new ServerSocket(9252);
             Log.printf("Server has started on port: %d", serverSocket.getLocalPort());
             Log.println("Waiting for clients...");
             // Loop indefinitely to establish multiple connections
