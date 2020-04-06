@@ -19,7 +19,6 @@ public class RequestLobby extends GameRequest{
 
     private String host;
     private ResponseLobby responseLobby;
-    private int playerCount;
 
     public String getHost() {
         return host;
