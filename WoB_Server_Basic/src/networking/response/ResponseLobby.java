@@ -1,3 +1,13 @@
+/*
+NEW LOBBY RESPONSE
+CREATED FOR FLOODED GROUNDS 2.0 4/2
+This class is modified from the original WOB
+to fit the flooded ground servers.
+
+created by Emanuel.
+
+ */
+
 package networking.response;
 
 import metadata.Constants;
@@ -8,13 +18,11 @@ public class ResponseLobby extends GameResponse{
     private short status;
     private Lobby lobby;
 
-    public ResponseLobby()
-    {
+    public ResponseLobby() {
         responseCode = Constants.SMSG_LOBBY;
     }
 
-    public byte[] constructResponseInBytes()
-        {
+    public byte[] constructResponseInBytes() {
         GamePacket packet = new GamePacket(responseCode);
         packet.addShort16(status);
         if (status == 0) {
@@ -26,15 +34,13 @@ public class ResponseLobby extends GameResponse{
 
         }
         return packet.getBytes();
-        }
+    }
 
-    public void setStatus(short status)
-    {
+    public void setStatus(short status) {
         this.status = status;
     }
 
-    public void setLobby(Lobby lobby)
-    {
+    public void setLobby(Lobby lobby) {
         this.lobby = lobby;
     }
 }

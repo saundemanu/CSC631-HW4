@@ -14,8 +14,6 @@ public class Player {
     private String username;
     private String password;
     private short level;
-    private int money;
-    private String inventory;
     private GameClient client; // References GameClient instance
 
 
@@ -23,13 +21,11 @@ public class Player {
         this.player_id = player_id;
     }
 
-    public Player(int player_id, String username, String password, short level, int money) {
+    public Player(int player_id, String username, String password, short level) {
         this.player_id = player_id;
         this.username = username;
         this.password = password;
         this.level = level;
-        this.money = money;
-        this.inventory = inventory;
     }
 
     public int getID() {
@@ -64,14 +60,6 @@ public class Player {
         this.level = level;
     }
 
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
-    }
-
     public GameClient getClient() {
         return client;
     }
@@ -87,7 +75,6 @@ public class Player {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", level=" + level +
-                ", money=" + money +
                 '}';
     }
 }

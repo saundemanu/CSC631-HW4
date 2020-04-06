@@ -1,12 +1,14 @@
 package metadata;
 
 // Java Imports
+
+import networking.request.GameRequest;
+import utility.Log;
+
 import java.util.HashMap;
 import java.util.Map;
 
 // Other Imports
-import networking.request.GameRequest;
-import utility.Log;
 
 /**
  * The GameRequestTable class stores a mapping of unique request code numbers
@@ -21,7 +23,8 @@ public class GameRequestTable {
      */
     public static void init() {
         // Populate the table using request codes and class names
-        add(Constants.CMSG_AUTH, "RequestLogin");
+        add(Constants.CMSG_AUTHFG, "RequestLoginFG");
+        add(Constants.CMSG_LOBBY, "RequestLobby");
         add(Constants.CMSG_HEARTBEAT, "RequestHeartbeat");
         add(Constants.CMSG_PLAYERS, "RequestPlayers");
         add(Constants.CMSG_TEST, "RequestTest");
