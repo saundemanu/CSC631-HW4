@@ -28,6 +28,8 @@ public class GameRequestTable {
         add(Constants.CMSG_HEARTBEAT, "RequestHeartbeat");
         add(Constants.CMSG_PLAYERS, "RequestPlayers");
         add(Constants.CMSG_TEST, "RequestTest");
+        add(Constants.CMSG_REG, "RequestRegisterFG");
+        add(Constants.CMSG_STATUS, "RequestGameStatus");
     }
 
     /**

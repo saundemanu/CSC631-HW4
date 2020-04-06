@@ -16,6 +16,11 @@ public class Constants {
     public static final short CMSG_LOBBY = 205;
     public final static short CMSG_AUTHFG = 101;
     public final static short SMSG_AUTHFG = 201;
+    public final static short CMSG_REG = 206;
+    public final static short SMSG_REG = 206;
+    public final static short CMSG_STATUS = 207;
+    public final static short SMSG_STATUS = 207;
+
 
     // Other
     public static final String CLIENT_VERSION = "1.00";

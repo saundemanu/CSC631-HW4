@@ -43,8 +43,8 @@ public class RequestLoginFG extends GameRequest {
     @Override
     public void doBusiness() throws Exception {
         Log.printf("%Connecting to user '%s'", username);
+        Player player = null;
         if (version.compareTo(Constants.CLIENT_VERSION) >= 0) {
-            Player player = null;
             if (!username.isEmpty()) {
                 if (username.equalsIgnoreCase("test") && password.equals("fg")) {
                     player = new Player(100, "test", "fg", (short) 1);
@@ -74,11 +74,11 @@ public class RequestLoginFG extends GameRequest {
                         }
                     }
                 }
+            }
             } else {
                 responseLoginFG.setStatus((short) 3); // Client version not compatible
                 Log.printf("User '%s' has failed to log in. (v%s)", player.getUsername(), version);
             }
-        }
 
     }
 
