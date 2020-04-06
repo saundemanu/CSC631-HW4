@@ -1,21 +1,27 @@
+/*
+NEW LOGIN RESPONSE
+CREATED FOR FLOODED GROUNDS 2.0 4/4
+This class is modified from the original WOB
+to fit the flooded ground servers.
+
+created by Emanuel.
+
+ */
+
+
 package networking.response;
 
-// Other Imports
 import metadata.Constants;
 import model.Player;
 import utility.GamePacket;
 
-/**
- * The ResponseLogin class contains information about the authentication
- * process.
- */
-public class ResponseLogin extends GameResponse {
+public class ResponseLoginFG extends GameResponse {
 
     private short status;
     private Player player;
 
-    public ResponseLogin() {
-        responseCode = Constants.SMSG_AUTH;
+    public ResponseLoginFG() {
+        responseCode = Constants.SMSG_AUTHFG;
     }
 
     @Override
@@ -25,7 +31,6 @@ public class ResponseLogin extends GameResponse {
         if (status == 0) {
             packet.addInt32(player.getID());
             packet.addString(player.getUsername());
-            packet.addInt32(player.getMoney());
             packet.addShort16(player.getLevel());
         }
         return packet.getBytes();
@@ -38,4 +43,5 @@ public class ResponseLogin extends GameResponse {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
 }

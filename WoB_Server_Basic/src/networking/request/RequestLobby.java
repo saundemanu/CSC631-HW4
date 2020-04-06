@@ -1,17 +1,25 @@
+/*
+NEW LOBBY REQUEST
+CREATED FOR FLOODED GROUNDS 2.0 4/2
+This class is modified from the original WOB
+to fit the flooded ground servers.
+
+created by Emanuel.
+
+ */
+
 package networking.request;
 
-import model.Lobby;
-import model.Player;
 import networking.response.ResponseLobby;
 import utility.Log;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class RequestLobby extends GameRequest{
 
     private String host;
     private ResponseLobby responseLobby;
+    private int playerCount;
 
     public String getHost() {
         return host;
