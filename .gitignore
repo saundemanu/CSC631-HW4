@@ -10,7 +10,6 @@ hs_err_pid*
 #IntelliJ init 
 .idea
 
-
 #Unity gitignore
 WoB_Client_Basic/[Ll]ibrary/
 WoB_Client_Basic/[Tt]emp/
