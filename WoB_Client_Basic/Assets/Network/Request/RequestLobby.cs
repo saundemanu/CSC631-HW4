@@ -8,10 +8,10 @@ public class RequestLobby : NetworkRequest {
 		request_id = Constants.CMSG_AUTH;
 	}
 	
-	public void send(string lobby, string username, string password) {
+	public void send(string user_id,string lobby, string password) {
 	    packet = new GamePacket(request_id);
+		packet.addString(user_id);
 		packet.addString(lobby);
-        packet.addString(username);
 		packet.addString(password);
 	}
 }

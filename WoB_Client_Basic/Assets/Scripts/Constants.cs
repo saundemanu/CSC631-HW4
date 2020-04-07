@@ -16,8 +16,8 @@ public class Constants {
 	public static readonly short SMSG_TEST = 204;
 	public static readonly short CMSG_LOBBY = 105;
 	public static readonly short SMSG_LOBBY = 205;
-	//public static readonly short CMSG_ = 106;
-	//public static readonly short SMSG_ = 206;
+	public static readonly short CMSG_REGISTER = 106;
+	public static readonly short SMSG_REGISTER = 206;
 	//public static readonly short CMSG_ = 107;
 	//public static readonly short SMSG_ = 207;
 	//public static readonly short CMSG_ = 108;
