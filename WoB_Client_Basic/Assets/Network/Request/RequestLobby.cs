@@ -5,13 +5,13 @@ using System;
 public class RequestLobby : NetworkRequest {
 
 	public RequestLobby() {
-		request_id = Constants.CMSG_AUTH;
+		request_id = Constants.CMSG_LOBBY;
 	}
 	
-	public void send(string user_id,string lobby, string password) {
+	public void send(int user_id, int size, string password) {
 	    packet = new GamePacket(request_id);
-		packet.addString(user_id);
-		packet.addString(lobby);
+		packet.addInt32(user_id);
+		packet.addInt32(size);
 		packet.addString(password);
 	}
 }
