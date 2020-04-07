@@ -11,7 +11,7 @@ public class ResponseLobbyEventArgs : ExtendedEventArgs {
 
 	
 	public ResponseLobbyEventArgs() {
-		event_id = Constants.SMSG_AUTH;
+		event_id = Constants.SMSG_LOBBY;
 	}
 }
 
@@ -43,7 +43,6 @@ public class ResponseLobby : NetworkResponse {
 			args.size = size;
 			args.password = password;
 		}
-
 		return args;
 	}
 }

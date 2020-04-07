@@ -15,9 +15,7 @@ public class NetworkRequestTable {
 		add(Constants.CMSG_TEST, "RequestTest");
 		add(Constants.CMSG_LOBBY, "RequestLobby");
 		add(Constants.CMSG_REGISTER, "RequestRegister");
-		//add(Constants.CMSG_, "Request");
-		//add(Constants.CMSG_, "Request");
-		//add(Constants.CMSG_, "Request");
+		add(Constants.CMSG_GM_STATUS, "RequestGameStatus");
 	}
 	
 	public static void add(short request_id, string name) {
